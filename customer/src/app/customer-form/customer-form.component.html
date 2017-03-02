@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="text-center panel-heading">Cliente</div>
+        <div class="panel-body">
+            <form (ngSubmit)="onSubmit($event)" #heroForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label for="name">Nome do Cliente</label>
+                        <input type="text" [(ngModel)]='customer.name' name="name" class="form-control" placeholder="Nome do Cliente">
+                    </div>
+                </div>
+                
+                  <div class="form-group row">
+            
+                    <div class="col-md-3">
+                        <label for="tp">Tipo pessoa</label>
+                        <select class="form-control" [(ngModel)]="customer.type" name="type">
+                            <option *ngFor="let typ of types" [value]="typ.id">{{typ.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="cpf">CPF</label>
+                        <input type="text" class="form-control" [(ngModel)]='customer.cpf' name="cpf" placeholder="CPF">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="iie">Indicador de Inscrição Estadual</label>
+                        <select class="form-control" [(ngModel)]="customer.indicator" name="indicator" >
+                            <option *ngFor="let ind of indicators" [value]="ind.id">{{ind.name}}</option>
+                        </select>
+                    </div>
+      
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="rg">RG</label>
+                        <input type="text" class="form-control" [(ngModel)]="customer.rg" name="rg" placeholder="RG">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="email">E-mail</label>
+                        <input type="text" class="form-control" [(ngModel)]="customer.email" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="workPhone">Telefone comercial</label>
+                        <input type="text" class="form-control" [(ngModel)]="customer.workPhone" name="workPhone" placeholder="Telefone comercial">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cel">Celular</label>
+                        <input type="text" class="form-control" [(ngModel)]="customer.personalPhone" name="personalPhone" placeholder="Celular">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
